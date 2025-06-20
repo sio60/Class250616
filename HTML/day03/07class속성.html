@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class 속성</title>
+    <style>
+        td{
+            width: 200px; height: 120px; text-align: center; font-size: 24px; border: 1px solid blue;
+            /* 테두리 굵기 모양 색상 */
+        }
+        table{
+            border: 3px dotted pink;
+        }
+        .green{
+            background-color: green;
+        }
+        #dotted{
+            border: 2px dotted orange;
+        }
+        /* td 태그 중 class 값이 pink를 선택 */
+        td.pink{
+            background-color: pink;
+        }
+        /* 선택 요소 나열하는 방법(나열 갯수 제한 없음) */
+        p, td, h2 {
+            font-weight: 800;
+        }
+        /* 복습 */
+        td:first-child{
+            background-color: aqua;
+        }
+        td:last-child{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!-- css에서 특정 요소를 구체적으로 선택할 때  (태그로만 선택하기에는 한계가 있음)
+        아래 2개의 속성값으로 태그의 이름(식별자)을 설정합니다.
+         1. class 속성 - 그룹으로 설정. 여러개의 요소를 선택할 때 같은 이름 부여
+                        css에서 특정 클래스 지정 기호는 .
+         2. id 속성 - 단독 설정. 한 개의 요소만 선택할 때 사용
+                        css에서 특정 클래스 지정 기호는 #
+          -->
+         <h2>테이블(표) 작성하기</h2>
+         <table>
+            <tr>
+                <td>1</td>
+                <td class="green">2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <!-- 자바스크립트에서 id 속성값을 많이 사용
+                    같은 id 이름을 여러개 설정 ㄴㄴ합시다 -->
+                <td id="dotted">5</td>
+                <td>6</td>
+                <td class="pink">7</td>
+                <td class="green">8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td id="dotted">10</td>
+                <td>11</td>
+                <td class="green">12</td>
+            </tr>
+         </table>
+         <p class="pink">클래스 속성 테스트-1</p>
+         <p class="green">클래스 속성 테스트-2</p>
+</body>
+</html>
+<!-- 
+    css 또는 자바스크립트에서 요소를 선택하는 방식(선택자)
+    1. 태그이름
+    2. 자식/자손요소 : 기호 ">" / "공백"
+    3. 자식의 위치 선택 : nth-child, nth-of-type(첫번째 또는 마지막 요소 선택자 있음)
+    4. class 또는 id 속성
+    
+
+
+-->

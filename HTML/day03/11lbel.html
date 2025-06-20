@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입-연습</title>
+</head>
+<body>
+    <h3>회원가입</h3>
+    <hr>
+    <form action="success.html">
+        <table>
+            <tr>
+                <th><label for="userid">사용자 아이디 : </label></th>
+                <td>
+                    <input type="text" name="userid" id="userid" required>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="username">성명 : </label></th>
+                <td>
+                    <input type="text" name="username" id="username">
+                </td>
+            </tr>
+            <tr>
+                <th><label for="password">비밀번호 : </label></th>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- radio: 단일 선택, 같은 그룹의 선택일 때 name 속성값을 동일하게!!!
+                     value를 꼭 설정해서 선택했을 때 보낼 값을 정하기!! -->
+                    <input type="radio" name="age" id="ageY" value="yes">
+                    <label for="ageY">14세 이상</label>
+                    <input type="radio" name="age" id="ageN" value="no">
+                    <label for="ageN">14세 미만</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- check box : 다중 선택(필수선택은 아님) -->
+                    <span>취미를 선택하세요.👉</span>
+                    <input type="checkbox" name="hobby" id="eyesopen" value="눈뜨기">
+                    <label for="eyesopen">눈뜨기</label>
+                    <input type="checkbox" name="hobby" id="still" value="소매치기">
+                    <label for="still">소매치기</label>
+                    <input type="checkbox" name="hobby" id="sleep" value="잠자기">
+                    <label for="sleep">잠자기</label>
+                    <input type="checkbox" name="hobby" id="breath" value="숨쉬기">
+                    <label for="breath">숨쉬기</label>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="address">거주지역 : </label></th>
+                <td>
+                    <select name="address" id="address">
+                        <option value="seoul">서울</option>
+                        <option value="north korea">북한</option>
+                        <option value="kangwhado">강화도</option>
+                        <option value="dokdo">독도</option>
+                        <option value="ulwreongdo">울릉도</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <!-- 데이더를 서버로 보내는 버튼은 submit. form 안에는 type 생략 가능 -->
+                    <button>저장</button>
+                    <button type="reset">초기화</button>
+                    <!-- 버튼의 비활성화 -->
+                    <button type="button" disabled>테스트</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

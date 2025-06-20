@@ -1,0 +1,140 @@
+div.car{
+    display: inline-block;
+}
+.logo{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 0 40;
+    height: 70;
+    bottom: 980px;
+    left: 50px;
+}
+.logo img{
+    height: 48px;
+    margin-right: 36px;
+}
+.logo-menu{
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin: 0;
+    padding: 0;
+}
+.logo-menu li{
+    position: relative;
+}
+.logo-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 21px 0;
+    transition: color 0.2s;
+
+}
+.logo-menu a:hover{
+    border-bottom: 2px solid #007bff;
+}
+.under{
+    position: absolute;
+    height: 2px;
+    background-color: #fff;
+    width: 96%;
+    margin-top: -2px;
+    top: 100px;
+    left: 40px;
+}
+div.title{
+    position: absolute;
+    left: 140px;
+    top: 150px;
+    font-size: 45px;
+    color: white;
+    font-weight: 900;
+}
+div.body{
+    position: absolute;
+    top: 230px;
+    left: 0em;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+div.leg{
+    position: absolute;
+    left: 500px;
+    font-size: 30px;
+    padding-right: 50px;
+    
+}
+div.button{
+    position: absolute;
+    left: 150px;
+    top: 310px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+div.button :hover{
+    background-color: rgb(6, 6, 119);
+    cursor: pointer;
+    
+}
+div.siseung{
+    position: absolute;
+    left: 350px;
+    bottom: 50px;
+}
+div.search{
+    position: absolute;
+    left: 920px;
+    bottom: 50px;
+}
+div.add{
+    position: absolute;
+    left: 1500px;
+    bottom: 45px;
+}
+div.apply{
+    position: absolute;
+    font-size: 23px;
+    top: 1000px;
+    left: 330px;
+}
+div.carbody{
+    position: absolute;
+    top: 1200px;
+}
+div.make{
+    position: absolute;
+    font-size: 23px;
+    left: 895px;
+    top: 999px;
+}
+div.shop{
+    position: absolute;
+    font-size: 23px;
+    top: 1000px;
+    left: 1470px;
+
+}
+div.good{
+    position: absolute;
+    left: 325px;
+    top: 1080px;
+}
+div.dong{
+    position: absolute;
+    left: 915px;
+    top: 1080px;
+}
+div.fish{
+    position: absolute;
+    left: 1493px;
+    top: 1080px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.wrap{
+    flex-wrap: wrap;
+}

@@ -1,0 +1,21 @@
+.container{
+    min-width: 90px;
+    min-height: 300px;
+    /* 시계방향 */
+    margin: 0 100px 100px 0px;
+    background-color: rgb(230, 66, 66);
+}
+.container > div {
+    width: 80px;
+    height: 80px;
+    border: 2px dotted blueviolet;
+}
+.flex-row{
+    display: flex;
+    /* 레이아웃 row 방향 기본값 생략 가능*/
+    flex-direction: row;
+}
+.wrap{
+    /* 기본값은 nowrap */
+    flex-wrap: wrap;
+}

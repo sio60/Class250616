@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>1. 외부 서버로 링크 연결</h2>
+    <!-- 새로운 웹페이지를 요청: 외부의 다른 웹서버로 요청하므로 http로 시작하는 주소 전체를 작성 -->
+    <div>
+        <a href="https://www.naver.com">네이버</a>
+        <a href="https://www.naver.com" target="_blank">네이버(새창)</a>
+        <!-- 이미지로 링크 연결하기 -->
+         <a href="https://www.naver.com" target="_blank">
+            <img src="naver.png" alt="" width="50px">
+         </a>
+         <a href="https://www.instagram.com/you._.ye225?igsh=MTV1dHNmbzh5dndvYQ==" target="_blank">
+            <img src="../prac/KakaoTalk_20250616_223422367.gif" alt="" width="50px">
+         </a>
+    </div>
+    <h2>2. 내부 페이지 링크 연결</h2>
+    <div>
+        <!-- 실제 웹 주소:http://127.0.0.1:5500/day02/03%ED%95%98%EC%9D%B4%ED%8D%BC%EB%A7%81%ED%81%AC.html(02멀티미디어가 인코딩 됨)
+         현재 페이지와 이동하는 페이지가 http://127.0.0.1:5500 (웹 서버의 주소)가 같으므로 웹문서(웹페이지) 파일명만 작성 | url 주소의 한글은 웹서버가 처리할 수 있도록 인코딩(문자의 표준화)됩니다. -->
+        <a href="02멀티미디어.html">02번 예제</a>
+        <a href="02멀티미디어.html" target="_blank">02번 예제(새창)</a>
+    </div>
+    <!-- 문제 : day01 폴더의 아이유.html 연결 -->
+     <h2>문제</h2>
+     <div>
+        <a href="../day01/아이유.html">아이유</a>
+        <a href="../day01/아이유.html"target="_blank">아이유(새창)</a>
+     </div>
+     <h2>3. 연습</h2>
+     <a href="https://namu.wiki/w/HTML">HTML</a> 등의 <a href="https://namu.wiki/w/HTML">마크업 언어</a>로 작성된 문서가 실제로 <a href="https://namu.wiki/w/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8">웹사이트</a>에 표현되는 방법을 정해주는 <a href="https://namu.wiki/w/%EC%8A%A4%ED%83%80%EC%9D%BC%EC%8B%9C%ED%8A%B8%20%EC%96%B8%EC%96%B4">스타일시트 언어</a>.
+
+CSS의 C가 Cascading[1]의 약자인데, 이는 상위 요소의 스타일 속성을 자손 요소들에게 상속시켜 주는 모습이 DOM 트리 구조에서 마치 폭포수처럼 내려가는 모습을 닮았기 때문이다. 다만 예외로 마진, 패딩, 보더 등의 박스 모델 관련 속성은 상속되지 않는다. 물론 inherit값을 줘서 강제로 상속시킬 순 있다.
+
+스타일 시트 언어이므로 일반적인 프로그래밍 언어와는 다른 종류의 기능을 하지만 HTML과 연결시키면 다음 코드로 Hello World를 출력할 수 있기도 하다.
+          
+</body>
+</html>

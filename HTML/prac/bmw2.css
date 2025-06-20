@@ -1,0 +1,30 @@
+body, div, ul {
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 0 40;
+    height: 50;
+    bottom: 1000px;
+    left: 50px;
+}
+.logo img{
+     height: 48px;
+    margin-right: 36px;
+}
+.logo-menu{
+    display: flex;
+    list-style: none;
+    gap: 36px;
+}
+
+.logo-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 21px 0;
+    transition: color 0.2s;
+}

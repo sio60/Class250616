@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <!--2. head 안에 style 태그로 설정  -->
+    <style>
+        /* css 주석 기호 */
+        /* h2 태그에 적용할 스타일 설정 */
+        h2 {
+            color: blue;
+            background-color: beige;
+            padding: 10px;
+            text-align: center;
+        }
+        /* ol의 자식 요소 li를 변경 */
+        ol>li {
+            color: pink;
+        }
+        /* 자식의 바로 근접한 하위 요소만 - 기호 >(부등호) 사용
+        자손은 모든 하위 요소 - 기호 공백 사용
+        */
+        /* nth-child 와 nth-of-type */
+        /* 부모인 article 태그의 두번째 자식이 p이면 색상 설정 */
+        /* p:nth-child(2)는 색상표시 안됨.
+           p:nth-of-type(2) 색상표시 됨. */
+           /* 자식요소들이 모두 같은 태그이면 nth-chile와 nth-of-type 결과가 같습니다 */
+
+        p:nth-child(2){
+            background-color: rgb(116, 201, 116);
+        }
+        /* 부모의 article 태그의 자식 p 요소 중 두번째를 색상 설정 */
+        /* 자식요소들의 태그이름을 구별해서 순서를 지정하고 싶을 때 */
+        p:nth-of-type(2){
+            background-color: pink;
+        }
+        /* 중복 된 스타일의 적용 순서 */
+        p{
+            color: red;
+        }
+        p{
+            color: orange;
+        }
+        /* 마지막에 설정 된 orange 컬러가 적용 */
+    </style>
+</head>
+<body>
+    <h2>css</h2>
+    <ul>
+        <li>기본적으로 h1, h2, p, hr 등의 태그들이 갖는 스타일이 있음
+        <li>기본적인 스타일을 사용하고 추가로 스타일 속성을 정하거나, 이미 설정 된 값을 변경할 수 있음
+        </li>
+            <ol>
+                <li> 태그의 style 속성값으로 설정-내용이 많아지면 관리/가독성 불편</li>
+                <li> head 안에 style 태그로 설정</li>
+                <li> 별도의 css 파일을 만들어서 활용 - head 안에 link 태그로 설정</li>
+            </ol>
+        </li>
+    </ul>
+    <hr>
+    <h2>자식요소 선택 예시</h2>
+    <article>
+        <p style="color: red;">첫번째 문단</p>
+        <div>첫번째 div
+            <p>1</p>
+            <div>2</div>
+            <p>3</p>
+            <p>4</p>
+        </div>
+        <p>두번째 문단</p>
+        <div>두번째 div</div>
+        <p>세번째 문단</p>
+        <div>세번째 div</div>
+    </article>
+</body>
+</html>

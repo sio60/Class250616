@@ -1,0 +1,27 @@
+div{
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(173, 228, 228);
+    margin: 10px;
+}
+/* 기본 position 값은 static */
+
+/* posotion: relative; 는 원래 배치되는 자리에서 이동. */
+div:nth-child(4) {
+    position: relative;
+    left: 500px;
+}
+/* position: absolute; 좌표를 left, top만큼 이동한 위치로 설정 
+   웹문서 (body 기준)*/
+div:nth-child(5){
+    position: absolute;
+    left: 500px;
+    top: 200px;
+}
+/* position: fixed; 좌표 left, top 위치에 고정(브라우저 기준) */
+div:nth-child(6){
+    position: fixed;
+    left: 500px;
+    top: 200px;
+}

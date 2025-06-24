@@ -17,26 +17,16 @@
             vertical-align: middle;
         }
     </style>
+    <!-- defer 속성 : head 안의 script는 body 안의 태그 요소를 모두 생성한 후에 실행 됨 -->
+    <script src="./js/12ex.js" defer></script>
+    <script>
+        const test = document.getElementById('twice2')
+        console.log(test.innerHTML) //body의 내용이 없는 상태라 오류 남
+    </script>
 </head>
 <body>
     <ul id="twice2">
         <!-- li 요소를 명령어로 만들 예정 -->
     </ul>
-    <script>
-        const members = ['mina', 'momo', 'nayeon', 'dahyeon', 'jihyo']
-        members.push('sana')
-        const twice2 = document.getElementById('twice2')
-        for(let m of members){
-            const li = document.createElement('li') //li 요소 생성
-            li.textContent=m
-            //class 속성값 추가 (새로운 스타일 적용)
-            li.classList.add('blue')
-            li.classList.add('w500')
-            console.log(li)
-            twice2.appendChild(li) //부모 요소 twice2에 생성된 li 요소를 마지막 자식으로 추가하기
-        }
-        console.log(li)
-        //for 안에서 선언된 li는 {...} 밖에서는 쓸 수 없다
-    </script>
 </body>
 </html>

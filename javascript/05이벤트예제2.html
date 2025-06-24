@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="05이벤트예제2.css">
+    <title>박스 움직이기</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+        div.nav > button {
+            width: 60px;
+            height: 60px;
+        }
+        div.nav {
+            height: 100px;
+            background-color: aqua;
+            display: flex; justify-content: center; align-items: center;
+        }
+        div#box{
+            position: absolute;
+        }
+        div.main{
+            background-color: beige;
+            /* 남은 영역을 '높이'로 설정하는 계산 : css 함수 calc()
+               브라우저의 전체 높이 - nav 영역 높이 100px */
+            height: calc(100vh - 100px);
+            /* 자식 요소를 수직, 수평 방향 모두 중앙 배치 */
+            display: flex;justify-content: center;align-items: center;
+        }
+    </style>
+</head>
+<body> 
+    <div id="container">  <!--가장 바깥쪽 박스-->
+        <!-- 첫번째 윗줄 박스 -->
+         <div class="nav">
+            <button id="top">👆🏻</button><button id="down">👇🏻</button>
+            <button id="right">👉🏻</button><button id="left">👈🏻</button>
+         </div>
+         <div class="main">
+            <!-- 컨트롤 하고 싶은 박스 -->
+             <div id="box"><img id="img" src="duck.png" alt="" width="50px"></div>
+         </div >
+    </div>
+    <script>
+        const container = document.getElementById('container')
+        const img = document.getElementById('img')
+        document.body.addEventListener('keydown', e =>{
+            console.log('이벤트정보', e)
+            const topb = box.offsetTop
+            const leftb = box.offsetLeft
+
+            const containerwidth = container.offsetWidth
+            const containerheight = container.offsetHeight
+
+            switch(e.key){
+                case 'ArrowUp':
+                    console.log('방향 위를 눌렀습니다')
+                    if (topb-10>100){box.style.top = (topb-10)+'px'}
+                    break
+                case 'ArrowDown':
+                    console.log('방향 아래를 눌렀습니다')
+                    if (topb+10<950){box.style.top = (topb+10)+'px'}
+                    break
+                case 'ArrowRight':
+                    console.log('방향 오른쪽을 눌렀습니다')
+                    if (leftb+10<1000){box.style.left = (leftb+10)+'px'}
+                    break
+                case 'ArrowLeft':
+                    console.log('방향 왼쪽을 눌렀습니다')
+                    if (leftb-10>30){box.style.left = (leftb-10)+'px'}
+                    break
+            }
+        })
+        container.addEventListener('click', (event)=>{
+            if(event.target.tagName === 'BUTTON'){
+            console.log("방향:", event.target.id);}
+            //크기는 10px
+        // [자바 스크립트에서 박스 요소 다루기]
+        // > 크기 (너비, 높이), 좌표(left, top)
+        // * 값을 가져 올 때는 - offset--
+        // * 값을 설정 할 때는 - box.style.-- = '100px'
+            const currentwidth = img.offsetWidth  //같은 함수 쓸 때는 대문자
+            const currentheight = img.offsetHeight
+            if(event.target.id ==='top'){
+                console.log('박스가 커집니다(높이)')
+                img.style.height = (currentheight+10)+'px'
+            }else if(event.target.id ==='down'){
+                console.log('박스가 작아집니다(높이)')
+                img.style.height = (currentheight-10)+'px'
+            }else if(event.target.id ==='left'){
+                console.log('박스가 작아집니다(너비)')
+                img.style.width = (currentwidth-10)+'px'
+            }else if(event.target.id ==='right'){
+                console.log('박스가 커집니다(너비)')
+                img.style.width = (currentwidth+10)+'px'
+            }})
+    </script>
+</body>
+</html>

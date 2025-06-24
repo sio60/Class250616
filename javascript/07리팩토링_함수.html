@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="pic_bulboff.gif" alt="off" style="cursor: pointer;">
+    <button id="btn">off</button>
+    <!-- 버튼 클릭 할 때 마다 on, off 토글 되게 -->
+     <script>
+        const btn = document.getElementById('btn')
+        const bulboff = "pic_bulboff.gif"
+        const bulbon = "pic_bulbon.gif"
+        //자주 사용하는 함수를 변수에 저장
+        // const onoff = ()=>{
+        const onoff = function(){ //함수에 대한 변수 선언은 사용하는 코드보다 앞에
+            if (isOn){
+                btnText = 'off'
+                bulbimg = bulboff
+            }else {
+                btnText = 'on'
+                bulbimg = bulbon
+            }
+            btn.textContent = btnText
+            img.src = bulbimg
+            isOn = !isOn
+        }
+        btn.addEventListener('click', onoff)
+        img.addEventListener('click', onoff)
+     </script>
+</body>
+</html>

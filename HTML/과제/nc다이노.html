@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nc다이노.css">
+    <title>nc</title>
+</head>
+<body>
+    <div class="title">
+        <ul style="padding-right: 40%;">
+            <li><a href="#">티켓</a></li>
+            <li><a href="#">팀스토어</a></li>
+            <li><a href="#">POD샵</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </div>
+    <div class="color">
+        <nav class="logo">
+            <img src="https://www.ncdinos.com/assets/images/logo.png" alt="로고">
+            <ul class="manu">
+                <li><a href="#">다이노스</a></li>
+                <li><a href="#">스토리</a></li>
+                <li><a href="#">경기정보</a></li>
+                <li><a href="#">선수단</a></li>
+                <li><a href="#">기록실</a></li>
+                <li><a href="#">팬</a></li>
+                <li><a href="#">주니어 다이노스</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="slider">
+        <img src="ncimg1.png" alt="이미지" id="slideImg" width="100%" height="400px">
+    </div>
+    <script>
+        const imgs = ["ncimg1.png","ncimg2.jpg","ncimg3.jpg","ncimg4.jpg"]
+        let idx = 0
+        setInterval(function(){
+            idx = (idx + 1) % imgs.length
+            document.getElementById('slideImg').src = imgs[idx]
+        },2000)
+    </script>
+</body>
+</html>

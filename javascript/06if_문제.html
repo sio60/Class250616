@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">on</button>
+    <hr>
+    <img src="pic_bulboff.gif" alt="off" style="cursor: pointer;">
+    <button id="btn2">off</button>
+    <!-- 버튼 클릭 할 때 마다 on, off 토글 되게 -->
+     <script>
+        const btn2 = document.getElementById('btn2')
+        const bulboff = "pic_bulboff.gif"
+        const bulbon = "pic_bulbon.gif"
+        let bulbimg = bulboff
+        let isOn = false // true('on'), false('false') // on 상태 ison이 true 일 때 실행
+        let btnText
+        const img = document.querySelector('img') //변수 설정
+        img.addEventListener('click', ()=>{
+            if (isOn){
+                btnText = 'off'
+                bulbimg = bulboff
+            }else {
+                btnText = 'on'
+                bulbimg = bulbon
+            }
+            btn2.textContent = btnText
+            img.src = bulbimg
+            isOn = !isOn
+        })
+        //토글 기능을 변수를 이용해서 제어
+
+        btn2.addEventListener('click', () => {
+        if (isOn){
+            btnText= 'off'
+            bulbimg = bulboff
+        }else {
+            btnText = 'on'
+            bulbimg = bulbon
+            
+        }
+        //버튼, 이미지 요소에 변수값을 적용
+        btn2.textContent = btnText
+        img.src = bulbimg
+        //ison 상태를 현재 상태와 반대로 변경
+        isOn = !isOn
+    })
+
+
+
+
+
+        const btn1 = document.getElementById('btn')
+        btn1.addEventListener('click',()=>{
+            if(btn1.textContent === 'on'){
+                btn1.textContent = 'off'
+            }else{
+                btn1.textContent = 'on'
+            }
+        })
+     </script>
+</body>
+</html>

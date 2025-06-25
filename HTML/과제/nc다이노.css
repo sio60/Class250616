@@ -4,14 +4,12 @@ div, body{
 }
 .title {
     display: flex;
-    gap: 30px;
     background-color: rgb(8, 0, 44);
     height: 36px;
+    justify-content: space-between;
 }
 .title ul {
-    padding: 0 0 0 0;
     position: relative;
-    left: 25%;
     list-style: none;
     display: flex;
     gap: 30px;
@@ -23,7 +21,7 @@ div, body{
     text-align: center;
     font-size: 0.7em;
     color: white;
-    right: 5%;
+
 }
 
 .logo {

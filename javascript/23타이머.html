@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내가 만든 타이머~ 너를 위해 만들었지</title>
+        <style>
+        /* 모달(modal)창 :alert, confirm,prompt 대신 사용하는 작은 창 */
+        /* 처음에는 modal을 안 보이게 하고 3초가 지나면 창이 보이도록함 */
+        .modal{
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.7);
+            /* 4번째 값은 투명도 70% 설정 */
+        }
+        .show {
+            display: block;
+        }
+        .modal-content{
+            background-color: white;
+            margin: 20% auto;
+            width: 300px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        /* 22timeout.html 코드 참고 */
+    </style>
+</head>
+<body>
+    <h4 id="now"></h4>
+    <hr>
+    <h2>타이머 설정</h2>
+    <div>
+        <!-- label gpt한테 물어보기 -->
+        <label for="second">초: </label> 
+        <input type="number" id="second">
+        <button id="startbtn">타이머 시작</button>
+        <button id="stopbtn">타이머 정지</button>
+    </div>
+    <div id="countdown"></div>
+     <div id="samplemodal" class="modal">
+        <div class="modal-content">
+            <h3>💣타임아웃!💣</h3>
+            <button id="closebtn">닫기</button>
+        </div>
+    <script>
+        let timerInterval //타이머 설정 인터벌 할당
+
+        const now = document.getElementById('now')
+        now.textContent = new Date()
+        // 현재 시간 출력하기
+        window.setInterval(function(){
+            now.textContent = new Date()
+        },1000)
+        const startbtn = document.getElementById('startbtn')
+        const stopbtn = document.getElementById('stopbtn')
+
+        function btnToggle(isOff){ //false   /true
+            startbtn.disabled = isOff //false  /true
+            stopbtn.disabled = !isOff//false  /false
+        }
+        btnToggle(false) //시작 활성화, 중지 활성화
+        stopbtn.addEventListener('click',function(){
+             window.clearInterval(timerInterval)
+             btnToggle(false)
+        })
+        startbtn.addEventListener('click',function(){
+            let timeseconds = Number(document.getElementById('second').value) //숫자를 입력
+            if(timeseconds <= 0){ //숫자가 0보다 크면
+                alert('0보다 큰 시간을 설정하세요.')
+                return; //함수 종료
+            }
+            btnToggle(true) //시작 비활성화, 중지 활성화
+            updatecount(timeseconds)
+            timerInterval = window.setInterval(function(){
+                timeseconds=timeseconds-1
+                if(timeseconds == 0) {
+                    // alert('타임 아웃')
+                    document.getElementById('samplemodal').classList.add('show')
+                    window.clearInterval(timerInterval)
+                    btnToggle(false)
+                }
+                    updatecount(timeseconds)
+            } ,1000)
+        }) //시작버튼 끝
+        function updatecount(timeseconds){
+            document.getElementById('countdown').textContent
+            // =timeseconds를 2자리 문자열로 출력하기
+            =`남은시간 : 💣 00:${timeseconds.toString().padStart(2,'0')}`
+            document.getElementById('second').value = timeseconds
+        }
+        document.getElementById('closebtn').addEventListener('click',function(){
+            document.getElementById('samplemodal').classList.remove('show') //클래스 속성에서 제거
+        })
+    </script>
+</body>
+</html>

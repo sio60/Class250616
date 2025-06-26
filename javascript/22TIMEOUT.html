@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <style>
+        /* 모달(modal)창 :alert, confirm,prompt 대신 사용하는 작은 창 */
+        /* 처음에는 modal을 안 보이게 하고 3초가 지나면 창이 보이도록함 */
+        .modal{
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.7);
+            /* 4번째 값은 투명도 70% 설정 */
+        }
+        .show {
+            display: block;
+        }
+        .modal-content{
+            background-color: white;
+            margin: 20% auto;
+            width: 300px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <p>window.settimeout 테스트 - 브라우저에서 제공 되는 기능, 시간을 브라우저가 체크</p>
+    <div>시작 시간:</div>
+    <div id="startdiv"></div>
+    <div>현재 시간:</div>
+    <div id="nowdiv"></div>
+    <button id="stopbtn">시간출력 정지</button>
+    <div id="samplemodal" class="modal">
+        <div class="modal-content">
+            <h3>💣타임아웃!💣</h3>
+            <button id="closebtn">닫기</button>
+        </div>
+    </div>
+    <script>
+        const startdiv = document.getElementById('startdiv')
+        const nowdiv = document.getElementById('nowdiv')
+        startdiv.textContent = '3초를 기다리면 현재 시간이 나옵니다.'
+        //현재 시간은 new date() 날짜 생성 함수 사용
+        document.getElementById('closebtn').addEventListener('click',function(){
+            document.getElementById('samplemodal').classList.remove('show') //클래스 속성에서 제거
+        })
+        window.setTimeout(function(){    //settimeout 함수 setinterval 함수 차이점 gpt한테 물어보기
+            startdiv.textContent = new Date()
+            document.getElementById('samplemodal').classList.add('show') //클래스 속성에 추가
+        },3000) //3000은 3초
+        //인터벌 객체를 변수에 할당하여 인터벌 동작을 중지할 때 사용
+        const testinterval = window.setInterval(function(){
+            nowdiv.textContent = new Date()
+        },1000)
+
+        document.getElementById('stopbtn').addEventListener('click',function(){
+            window.clearInterval(testinterval) //인터벌 동작을 중지(브라우저 타이머 제거)
+        })
+    </script>
+</html>

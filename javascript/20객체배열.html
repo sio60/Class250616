@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./js/20ex.js"></script>
-    <title>Document</title>
+    <title>객체배열 시간표</title>
     <style>
+        h3{
+            text-align: center;
+        }
          table{
             border: 1px solid tomato;
             border-collapse: collapse; 
@@ -28,12 +31,24 @@
             text-align: center;
             padding: 5px;
         }
+        h3, input {
+            padding: 7px, 12px;
+        }
     </style>
 </head>
 <body>
     <!-- 19번 html 없음 -->
      <div id="root">
+        <h3>오늘 시간표</h3>
 
+     </div>
+     <hr>
+     <div>
+        <label for="newtime">시간:</label>
+        <input type="time" id="newtime">
+        <label for="newtodo">할 일:</label>
+        <input type="text" id="newtodo">
+        <button id="newBTN">새로운 스케줄 추가</button>
      </div>
 </body>
 </html>

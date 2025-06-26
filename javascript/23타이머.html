@@ -58,7 +58,6 @@
         },1000)
         const startbtn = document.getElementById('startbtn')
         const stopbtn = document.getElementById('stopbtn')
-
         function btnToggle(isOff){ //false   /true
             startbtn.disabled = isOff //false  /true
             stopbtn.disabled = !isOff//false  /false
@@ -70,7 +69,7 @@
         })
         startbtn.addEventListener('click',function(){
             let timeseconds = Number(document.getElementById('second').value) //숫자를 입력
-            if(timeseconds <= 0){ //숫자가 0보다 크면
+            if(timeseconds <= 0){ //숫자가 0보다 작으면
                 alert('0보다 큰 시간을 설정하세요.')
                 return; //함수 종료
             }
